@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineScope - Movie App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">🎬 CineScope</div>
+    
+    <form id="searchForm" class="search-form">
+      <input type="text" id="searchInput" placeholder="Search movies or shows..." required />
+      <button type="submit">Search</button>
+    </form>
+
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+  </header>
+
+  <!-- Controls -->
+  <section class="controls">
+    <div class="genres" id="genreFilters">
+      <button class="genre-btn active" data-genre="all">All</button>
+      <button class="genre-btn" data-genre="Action">Action</button>
+      <button class="genre-btn" data-genre="Comedy">Comedy</button>
+      <button class="genre-btn" data-genre="Drama">Drama</button>
+      <button class="genre-btn" data-genre="Horror">Horror</button>
+    </div>
+
+    <div class="pagination" id="pagination">
+      <button id="prevBtn" disabled>Previous</button>
+      <span id="pageInfo">Page 1</span>
+      <button id="nextBtn">Next</button>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <div id="loader" class="loader hidden"></div>
+    <p id="message" class="message hidden"></p>
+    <div id="movieGrid" class="movie-grid"></div>
+  </main>
+
+  <!-- Details Modal -->
+  <div id="movieModal" class="modal hidden">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

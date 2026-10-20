@@ -1,0 +1,367 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap');
+
+/* Variables */
+:root {
+  --bg: #1a1a1a;
+  --text: #f8f9fa;
+  --accent: #f39c12;
+  --card: #262626;
+  --border: #333;
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  background: rgba(26, 26, 26, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent);
+  font-family: 'Playfair Display', serif;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://placehold.co/1920x1080/1a1a1a/f39c12?text=Hero+Image') center/cover;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.hero p {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+/* About Section */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about img {
+  flex: 1;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.about h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* Menu Section */
+.menu {
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.menu h2 {
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.menu-item {
+  background: var(--card);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  padding-bottom: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(243, 156, 18, 0.2);
+}
+
+.menu-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.menu-item:hover img {
+  transform: scale(1.05);
+}
+
+.menu-item h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.menu-item p {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonials h2 {
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-style: italic;
+}
+
+.testimonial-card h4 {
+  color: var(--accent);
+  margin-top: 1rem;
+  font-style: normal;
+}
+
+/* Reservation Section */
+.reservation {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--card);
+}
+
+.reservation h2 {
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+
+#reservationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#reservationForm input {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  color: #888;
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: none;
+  font-size: 1.2rem;
+  z-index: 99;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--accent);
+  color: var(--bg);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding-top: 1rem;
+  }
+  
+  .nav.active {
+    display: flex;
+  }
+  
+  .about {
+    flex-direction: column;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+}

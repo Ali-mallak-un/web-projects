@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import DashboardCharts from './components/DashboardCharts';
 import RecentOrders from './components/RecentOrders';
+import Orders from './components/Orders';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 function App() {
@@ -68,13 +69,18 @@ function App() {
               {/* Charts */}
               <DashboardCharts />
 
-              {/* Table (ONLY inside dashboard tab) */}
+              {/* Recent Orders Table */}
               <RecentOrders />
             </div>
           )}
 
-          {/* Other Tabs Placeholder */}
-          {activeTab !== 'dashboard' && (
+          {/* Orders Tab Content */}
+          {activeTab === 'orders' && (
+            <Orders />
+          )}
+
+          {/* Other Tabs Placeholder (Customers, Analytics, Settings) */}
+          {activeTab !== 'dashboard' && activeTab !== 'orders' && (
             <div className="flex items-center justify-center h-96 border border-dashed border-neutral-800 rounded-xl">
               <p className="text-neutral-500 capitalize">{activeTab} Page coming soon...</p>
             </div>
